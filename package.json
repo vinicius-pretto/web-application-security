@@ -1,0 +1,37 @@
+{
+  "name": "web-application-security",
+  "version": "1.0.0",
+  "description": "Web Application Security",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinicius-pretto/web-application-security.git"
+  },
+  "keywords": [
+    "Injection",
+    "Broken Authentication",
+    "Sensitive Data Exposure",
+    "XML External Entities (XXE)",
+    "Broken Access Control",
+    "Security Misconfiguration",
+    "Cross-Site Scripting XSS",
+    "Insecure Deserialization",
+    "Using Components with Known Vulnerabilities",
+    "Insufficient Logging & Monitoring"
+  ],
+  "author": "Vinicius Pretto, Grace Gately",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vinicius-pretto/web-application-security/issues"
+  },
+  "homepage": "https://github.com/vinicius-pretto/web-application-security#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "express": "^4.17.1",
+    "figlet": "^1.5.0"
+  }
+}
