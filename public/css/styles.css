@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
   font-family: Helvetica, sans-serif;
+  font-size: 1rem;
 }
 
 *,
@@ -42,6 +43,56 @@ body {
 
 .list li a {
   color: #0052cc;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  padding: 1rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e5e5e5;
+  border-radius: 4px;
+  font-size: inherit;
+}
+
+.btn {
+  padding: 1rem;
+  font-size: inherit;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #0052cc;
+  border-radius: 4px;
+  background-color: #0052cc;
+  color: #fff;
+  min-width: 125px;
+  cursor: pointer;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.login-form {
+  padding: 2rem;
+  max-width: 420px;
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+.login-form h1 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
 }
 
 @media (min-width: 1400px) {

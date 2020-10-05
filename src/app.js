@@ -10,4 +10,8 @@ app.get("/", (req, res) => {
   res.sendFile(path.resolve("public/index.html"));
 });
 
+app.get("/injection", (req, res) => {
+  res.sendFile(path.resolve("public/injection/index.html"));
+});
+
 module.exports = app;
