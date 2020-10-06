@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web Application Security</title>
   <link rel="stylesheet" href="/css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"
+    integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg=="
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -17,7 +20,7 @@
 
   <main>
     <div class="container margin-top-2">
-      <form class="login-form">
+      <form id="login" class="login-form">
         <h1>Log In to your account</h1>
 
         <div class="input-group">
@@ -31,9 +34,29 @@
         </div>
 
         <button type="submit" class="btn full-width">Log In</button>
+        <p id="error" class="error hide">Email or password is invalid.</p>
       </form>
     </div>
   </main>
+
+  <script>
+    document.querySelector('#login').addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const email = document.querySelector('#email').value;
+      const password = document.querySelector('#password').value;
+      const credentials = { email, password };
+      const url = 'http://localhost:3000/api/login';
+
+      axios.post(url, credentials)
+        .then(() => {
+          window.location.assign('/injection/welcome');
+        })
+        .catch(() => {
+          document.querySelector('#error').classList.remove('hide');
+        });
+    });
+  </script>
 </body>
 
 </html>

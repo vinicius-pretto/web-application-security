@@ -95,6 +95,15 @@ body {
   font-size: 1.5rem;
 }
 
+.hide {
+  display: none;
+}
+
+.error {
+  font-size: 0.875rem;
+  color: #cc0000;
+}
+
 @media (min-width: 1400px) {
   .container {
     padding: 0;
