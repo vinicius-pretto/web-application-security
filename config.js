@@ -18,4 +18,9 @@ config.staticOptions = {
   index: false,
 };
 
+config.postgres = {
+  connectionUri:
+    "postgresql://postgres:postgres@localhost:5432/web_application_security",
+};
+
 module.exports = config;
