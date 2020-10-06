@@ -1,5 +1,7 @@
 const figlet = require("figlet");
 const chalk = require("chalk");
+const dotenv = require("dotenv");
+dotenv.config();
 const app = require("./src/app");
 const config = require("./config");
 
