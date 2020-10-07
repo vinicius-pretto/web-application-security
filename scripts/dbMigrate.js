@@ -3,8 +3,13 @@ dotenv.config();
 const { Client } = require("pg");
 const config = require("../config");
 
-const CREATE_USERS_TABLE =
-  "CREATE TABLE IF NOT EXISTS users (email VARCHAR(128), password TEXT);";
+const CREATE_USERS_TABLE = `
+  CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY, 
+    email VARCHAR(128) NOT NULL, 
+    password TEXT NOT NULL
+  );
+`;
 
 const INSERT_USERS = `INSERT INTO users (email, password) VALUES ('${config.loginEmail}', '${config.loginPassword}');`;
 
