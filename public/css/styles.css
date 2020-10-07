@@ -1,6 +1,17 @@
+:root {
+  --color-dark: #000;
+  --color-white: #fff;
+  --color-gray: #e5e5e5;
+  --color-primary: #0052cc;
+  --color-gray-light: #f8f9fa;
+  --color-error: #cc0000;
+  --border-radius-base: 4px;
+  --font-family: Helvetica, sans-serif;
+}
+
 html {
   box-sizing: border-box;
-  font-family: Helvetica, sans-serif;
+  font-family: var(--font-family);
   font-size: 1rem;
 }
 
@@ -21,11 +32,11 @@ body {
 .header {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  background-color: #000;
+  background-color: var(--color-dark);
 }
 
 .header a {
-  color: #fff;
+  color: var(--color-white);
 }
 
 .container {
@@ -42,7 +53,7 @@ body {
 }
 
 .list li a {
-  color: #0052cc;
+  color: var(--color-primary);
 }
 
 .input-group {
@@ -60,8 +71,8 @@ body {
   padding: 1rem;
   border-width: 1px;
   border-style: solid;
-  border-color: #e5e5e5;
-  border-radius: 4px;
+  border-color: var(--color-gray);
+  border-radius: var(--border-radius-base);
   font-size: inherit;
 }
 
@@ -70,10 +81,10 @@ body {
   font-size: inherit;
   border-width: 1px;
   border-style: solid;
-  border-color: #0052cc;
-  border-radius: 4px;
-  background-color: #0052cc;
-  color: #fff;
+  border-color: var(--color-primary);
+  border-radius: var(--border-radius-base);
+  background-color: var(--color-primary);
+  color: var(--color-white);
   min-width: 125px;
   cursor: pointer;
 }
@@ -83,10 +94,12 @@ body {
 }
 
 .login-form {
+  min-height: 408px;
   padding: 2rem;
   max-width: 420px;
-  background-color: #eee;
-  border-radius: 4px;
+  background-color: var(--color-gray-light);
+  border-radius: var(--border-radius-base);
+  margin-bottom: 2.5rem;
 }
 
 .login-form h1 {
@@ -101,7 +114,24 @@ body {
 
 .error {
   font-size: 0.875rem;
-  color: #cc0000;
+  color: var(--color-error);
+}
+
+.highligh {
+  margin: 0;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background-color: var(--color-gray-light);
+}
+
+.highligh pre {
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+pre code {
+  font-family: var(--font-family);
 }
 
 @media (min-width: 1400px) {

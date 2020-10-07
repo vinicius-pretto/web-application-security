@@ -25,7 +25,7 @@
 
         <div class="input-group">
           <label for="email">Email</label>
-          <input id="email" class="input" type="email" placeholder="Enter your email">
+          <input id="email" class="input" type="text" placeholder="Enter your email">
         </div>
 
         <div class="input-group">
@@ -36,6 +36,14 @@
         <button type="submit" class="btn full-width">Log In</button>
         <p id="error" class="error hide">Email or password is invalid.</p>
       </form>
+
+      <p>SQL injection example:</p>
+
+      <figure class="highligh">
+        <pre>
+          <code>' or '1'='1</code>
+        </pre>
+      </figure>
     </div>
   </main>
 
