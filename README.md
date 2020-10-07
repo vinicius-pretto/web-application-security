@@ -34,7 +34,19 @@ The OWASP Top 10 is a standard awareness document for developers and web applica
 $ npm install
 ```
 
-**2. Start application**
+**2. Start Postgres Docker container**
+
+```
+$ npm run postgres:start
+```
+
+**3. DB Migrate**
+
+```
+$ npm run db:migrate
+```
+
+**4. Start application**
 
 ```
 $ npm start
