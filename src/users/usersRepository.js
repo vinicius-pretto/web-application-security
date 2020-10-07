@@ -11,7 +11,7 @@ class UsersRepository {
 
   async findUserByEmailAndPassword(email, password) {
     const response = await this.client.query(
-      `SELECT email FROM users 
+      `SELECT id FROM users 
         WHERE email='${email}'
         AND password='${password}'
         LIMIT 1
