@@ -11,13 +11,18 @@ const userDataVariables = (data) =>
 const adminDataVariables = (ids) => 
   ids.map((_, index) => `($${index + 1})`).join(", ");
 
+const INSERT_LOCAL_USERS = (config) => ({
+  text: `INSERT INTO users (email, username, password) VALUES ($1, $2, $3);`,
+  values: [config.loginEmail, config.loginUsername, config.loginPassword]
+})
+
 const INSERT_USERS = (data) => ({
-  text: `INSERT into users (email, username, password) VALUES ${userDataVariables(data)} RETURNING id`,
+  text: `INSERT into users (email, username, password) VALUES ${userDataVariables(data)} RETURNING id;`,
   values: data.flat(2)
 });
 
 const LINK_ADMINS = (ids) => ({
-  text: `INSERT into admins (user_id) VALUES ${adminDataVariables(ids)}`,
+  text: `INSERT into admins (user_id) VALUES ${adminDataVariables(ids)};`,
   values: ids
 });
 
@@ -29,8 +34,9 @@ async function seed() {
 
   client
     .query(INSERT_USERS(data))
+    .then(client.query(INSERT_LOCAL_USERS(config)))
     .then(res => {
-      const adminIds = res.rows.filter(({id}) => id % 2).map(({id}) => id);
+      const adminIds = res.rows.filter(({id}) => (id % 5 === 0)).map(({id}) => id);
       return client.query(LINK_ADMINS(adminIds));
     })
     .then(() => {

@@ -38,6 +38,7 @@ $ npm install
 
 ```
 LOGIN_EMAIL=
+LOGIN_USERNAME=
 LOGIN_PASSWORD=
 ```
 

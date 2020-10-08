@@ -25,7 +25,7 @@ class UsersRepository {
       text: `SELECT id from users
         WHERE username = ($1)
         AND password = ($2)
-        LIMIT 1`,
+        LIMIT 1;`,
       values: [username, password]
     };
 

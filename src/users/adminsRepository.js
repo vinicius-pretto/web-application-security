@@ -11,7 +11,7 @@ class AdminsRepository {
 
   async findAdminByUserId(id) {
     const query = {
-      text: `SELECT id FROM admins WHERE user_id = ($1)`,
+      text: `SELECT id FROM admins WHERE user_id = ($1);`,
       values: [id]
     };
 
