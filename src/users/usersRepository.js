@@ -21,13 +21,15 @@ class UsersRepository {
   }
 
   async findUserByUsernameAndPassword(username, password) {
-    const response = await this.client.query(
-      `SELECT id FROM users
-        WHERE username='${username}'
-        AND password='${password}'
-        LIMIT 1
-      `
-    );
+    const query = {
+      text: `SELECT id from users
+        WHERE username = ($1)
+        AND password = ($2)
+        LIMIT 1`,
+      values: [username, password]
+    };
+
+    const response = await this.client.query(query);
     return response.rows[0];
   }
 }
