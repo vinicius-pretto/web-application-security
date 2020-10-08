@@ -10,7 +10,7 @@
     "postgres:start": "sh bin/start-postgres.sh",
     "postgres:stop": "sh bin/stop-postgres.sh",
     "db:migrate": "node scripts/dbMigrate.js",
-    "db:seed": "node scripts/seed.js",
+    "db:seed": "node scripts/seed.js"
   },
   "repository": {
     "type": "git",
