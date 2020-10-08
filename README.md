@@ -53,20 +53,20 @@ $ npm run postgres:start
 $ npm run db:migrate
 ```
 
-**4. DB Seed**
+**5. DB Seed**
 
 ```
 $ npm run db:seed
 ```
 
-**5. Start application**
+**6. Start application**
 
 ```
 $ npm start
 ```
 
 ## Want to Develop?
-That's great! Run steps 1-4 above and then simply run:
+That's great! Run steps 1-5 above and then simply run:
 ```
 $ npm start:dev
 ```
