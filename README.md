@@ -46,8 +46,21 @@ $ npm run postgres:start
 $ npm run db:migrate
 ```
 
-**4. Start application**
+**4. DB Seed**
+
+```
+$ npm run db:seed
+```
+
+**5 Start application**
 
 ```
 $ npm start
 ```
+
+## Want to Develop?
+That's great! Run steps 1-4 above and then simply run:
+```
+$ npm start:dev
+```
+to run your application in watch mode.
