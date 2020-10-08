@@ -19,6 +19,17 @@ class UsersRepository {
     );
     return response.rows[0];
   }
+
+  async findUserByUsernameAndPassword(username, password) {
+    const response = await this.client.query(
+      `SELECT id FROM users
+        WHERE username='${username}'
+        AND password='${password}'
+        LIMIT 1
+      `
+    );
+    return response.rows[0];
+  }
 }
 
 module.exports = UsersRepository;

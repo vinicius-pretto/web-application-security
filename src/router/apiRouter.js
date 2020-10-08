@@ -1,10 +1,11 @@
 const express = require("express");
 const HttpStatus = require("http-status");
-const config = require("../../config");
 const UsersRepository = require("../users/usersRepository");
+const AdminsRepository = require("../users/adminsRepository");
 
 const router = express.Router();
 const usersRepository = new UsersRepository();
+const adminsRepository = new AdminsRepository();
 
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
@@ -31,6 +32,35 @@ router.post("/login", async (req, res) => {
       message: "Internal Server Error",
     });
   }
+});
+
+router.post("/authentication/login", async (req, res) => {
+  const { username, password } = req.body;
+
+  const setCookie = (userInformation) => {
+    res.cookie('user', JSON.stringify(userInformation), { 
+      expires: new Date(Date.now() + 7 * 24 * 3600 * 1000),
+      httpOnly: true
+    });
+  };
+
+  usersRepository.findUserByUsernameAndPassword(username, password)
+    .then((user) => {
+      if (user) {
+        setCookie({isAdmin: false});
+        return adminsRepository.findAdminByUserId(user.id);
+      }
+      delete res.cookie.user;
+      return null;
+    })
+    .then((admin) => {
+      if (admin && admin.id) {
+        setCookie({isAdmin: true});
+      }
+      return null;
+    })
+    .catch(error => console.log("Login failed", error.stack))
+    .finally(() => res.redirect("/my-account"));
 });
 
 module.exports = router;
