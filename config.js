@@ -10,6 +10,7 @@ config.apiPrefix = "/api";
 
 // Login credentials
 config.loginEmail = process.env.LOGIN_EMAIL;
+config.loginUsername = process.env.LOGIN_USERNAME;
 config.loginPassword = process.env.LOGIN_PASSWORD;
 
 // Static middleware

@@ -7,11 +7,17 @@ const CREATE_USERS_TABLE = `
   CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY, 
     email VARCHAR(128) NOT NULL, 
+    username VARCHAR(128) NOT NULL,
     password TEXT NOT NULL
   );
 `;
 
-const INSERT_USERS = `INSERT INTO users (email, password) VALUES ('${config.loginEmail}', '${config.loginPassword}');`;
+const CREATE_ADMIN_TABLE = `
+  CREATE TABLE IF NOT EXISTS admins (
+    id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(id)
+  );
+`;
 
 async function migrate() {
   const client = new Client({
@@ -21,7 +27,7 @@ async function migrate() {
 
   client
     .query(CREATE_USERS_TABLE)
-    .then(client.query(INSERT_USERS))
+    .then(client.query(CREATE_ADMIN_TABLE))
     .then(() => {
       process.exit(0);
     })

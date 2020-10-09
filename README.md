@@ -38,6 +38,7 @@ $ npm install
 
 ```
 LOGIN_EMAIL=
+LOGIN_USERNAME=
 LOGIN_PASSWORD=
 ```
 
@@ -53,8 +54,21 @@ $ npm run postgres:start
 $ npm run db:migrate
 ```
 
-**5. Start application**
+**5. DB Seed**
+
+```
+$ npm run db:seed
+```
+
+**6. Start application**
 
 ```
 $ npm start
 ```
+
+## Want to Develop?
+That's great! Run steps 1-5 above and then simply run:
+```
+$ npm start:dev
+```
+to run your application in watch mode.
