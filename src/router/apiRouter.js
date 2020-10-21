@@ -28,10 +28,7 @@ router.post("/login", async (req, res) => {
     res.json({ message: "Authenticated" });
   } catch (error) {
     console.log("Login failed", error.stack);
-
-    res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
-      message: "Internal Server Error",
-    });
+    res.status(HttpStatus.INTERNAL_SERVER_ERROR).send(error.stack);
   }
 });
 
@@ -59,10 +56,7 @@ router.post("/v2/login", async (req, res) => {
     res.json({ message: "Authenticated" });
   } catch (error) {
     console.log("Login failed", error.stack);
-
-    res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
-      message: "Internal Server Error",
-    });
+    res.status(HttpStatus.INTERNAL_SERVER_ERROR).send(error.stack);
   }
 });
 
