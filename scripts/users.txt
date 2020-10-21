@@ -23,3 +23,4 @@
 'concetta@gmail.com','concetta','mustang'
 'eimile@gmail.com','eimile','password1'
 'admin@gmail.com','admin','admin'
+'john@domain.com','john@domain.com','john123@'
