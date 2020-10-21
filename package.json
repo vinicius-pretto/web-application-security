@@ -9,6 +9,8 @@
     "start:dev": "nodemon index.js",
     "postgres:start": "sh bin/start-postgres.sh",
     "postgres:stop": "sh bin/stop-postgres.sh",
+    "mongodb:start": "sh bin/start-mongodb.sh",
+    "mongodb:stop": "sh bin/stop-mongodb.sh",
     "db:migrate": "node scripts/dbMigrate.js",
     "db:seed": "node scripts/seed.js"
   },
@@ -37,11 +39,13 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "chalk": "^4.1.0",
-    "dotenv": "^8.2.0",
     "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "figlet": "^1.5.0",
     "http-status": "^1.4.2",
+    "lodash": "^4.17.20",
+    "mongodb": "^3.6.2",
     "pg": "^8.4.0"
   },
   "devDependencies": {

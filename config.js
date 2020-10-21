@@ -19,9 +19,15 @@ config.staticOptions = {
   index: false,
 };
 
+// PostgreSQL
 config.postgres = {
   connectionUri:
     "postgresql://postgres:postgres@localhost:5432/web_application_security",
+};
+
+// MongoDB
+config.mongoDB = {
+  connectionUri: "mongodb://localhost:27017",
 };
 
 module.exports = config;

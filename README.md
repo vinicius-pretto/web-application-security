@@ -26,6 +26,10 @@ The OWASP Top 10 is a standard awareness document for developers and web applica
 
 [10. Insufficient Logging & Monitoring.](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A10-Insufficient_Logging%252526Monitoring) Insufficient logging and monitoring, coupled with missing or ineffective integration with incident response, allows attackers to further attack systems, maintain persistence, pivot to more systems, and tamper, extract, or destroy data. Most breach studies show time to detect a breach is over 200 days, typically detected by external parties rather than internal processes or monitoring.
 
+## Tech Debts
+
+- Use docker-compose to run the containers
+
 ## Running application
 
 **1. Install dependencies**
@@ -42,10 +46,11 @@ LOGIN_USERNAME=
 LOGIN_PASSWORD=
 ```
 
-**3. Start Postgres Docker container**
+**3. Start Postgres and MongoDB Docker container**
 
 ```
 $ npm run postgres:start
+$ npm run mongodb:start
 ```
 
 **4. DB Migrate**
@@ -67,8 +72,11 @@ $ npm start
 ```
 
 ## Want to Develop?
+
 That's great! Run steps 1-5 above and then simply run:
+
 ```
 $ npm start:dev
 ```
+
 to run your application in watch mode.
