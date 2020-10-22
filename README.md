@@ -68,7 +68,7 @@ $ npm start
 That's great! Run steps 1-5 above and then simply run:
 
 ```
-$ npm start:dev
+$ npm run start:dev
 ```
 
 to run your application in watch mode.
